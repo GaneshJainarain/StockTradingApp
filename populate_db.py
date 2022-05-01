@@ -28,4 +28,5 @@ for asset in assets:
 
 
 
+
 connection.commit()
