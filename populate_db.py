@@ -20,7 +20,8 @@ for asset in assets:
 
 for asset in assets:
     try:
-        if asset.status == 'active':
+        if asset.status == 'active' and asset.tradable:
+            print(asset)
             cursor.execute("INSERT INTO stock (symbol, company) VALUES (?, ?)", (asset.symbol, asset.name))
     except Exception as e:
         print(asset.symbol)
