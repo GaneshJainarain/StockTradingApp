@@ -1,8 +1,9 @@
 import os
 import sqlite3
 import alpaca_trade_api as tradeapi
-
+from datetime import datetime
 from dotenv import load_dotenv
+
 load_dotenv()
 
 ID = os.getenv('ID')
