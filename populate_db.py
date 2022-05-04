@@ -9,7 +9,7 @@ ID = os.getenv('ID')
 SECRET_KEY = os.getenv('SECRET_KEY')
 BASE_URL = os.getenv('BASE_URL')
 
-connection = sqlite3.connect('app.db')
+connection = sqlite3.connect('/Users/richeyjay/Desktop/StockTradingApp/app.db')
 #Whenever we query this returns a Sqlite3 object
 connection.row_factory = sqlite3.Row
 cursor = connection.cursor()
@@ -34,7 +34,7 @@ for asset in assets:
     try:
         if asset.status == 'active' and asset.tradable and asset.symbol not in symbols:
             print(f"Added a new stock {asset.symbol} {asset.name}")
-            #cursor.execute("INSERT INTO stock (symbol, company) VALUES (?, ?)", (asset.symbol, asset.name))
+            cursor.execute("INSERT INTO stock (symbol, company) VALUES (?, ?)", (asset.symbol, asset.name))
     except Exception as e:
         print(asset.symbol)
         print(e)
