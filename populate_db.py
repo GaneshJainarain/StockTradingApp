@@ -16,7 +16,7 @@ connection.row_factory = sqlite3.Row
 cursor = connection.cursor()
 
 """ Getting the records that are already in our DB """
-
+ 
 cursor.execute("""
     SELECT symbol, company FROM stock
 """)
