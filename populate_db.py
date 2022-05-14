@@ -19,7 +19,7 @@ cursor = connection.cursor()
  
 cursor.execute("""
     SELECT symbol, company FROM stock
-""")
+""") 
 
 """ Putting all of the alreaddy existing companies in a list """
 """ To see which stocks arent already in the list and got updated since last population"""
